@@ -1,49 +1,33 @@
 # Name:Oladehinde angel
 # matric:BU25IFT2002
-print("Personal Income Tax Calculator (2009)")
+            
+# Personal Income Tax Calculator (2009)
 
-print("Enter filing status:")
+This project is a *Python-based Personal Income Tax Calculator* that computes U.S. federal income tax for the year *2009* based on filing status and taxable income.
 
-print("0 - Single")
-print("1 - Married Filing Jointly or Qualified Widow(er)")
-print("2 - Married Filing Separately")
-print("3 - Head of Household")
-status= int(input("Enter number (0-3): "))
-income = float(input("Enter taxable income: "))
-
-def compute_tax(status, income):
-    # Tax brackets for 2009
-
-    if status == 0:  # Single
-   brackets =  [(8350, 0.10), (33950, 0.15), (82250, 0.25),
-            (171550, 0.28), (372950, 0.33), (float('inf'), 0.35)],
- elif status == 1:  # Married Jointly
-  brackets = [(16700, 0.10), (67900, 0.15), (137050, 0.25),
-              (208850, 0.28), (372950, 0.33), (float('inf'), 0.35)],
-elif status == 2:  # Married Separately
-       brackets =  [(8350, 0.10), (33950, 0.15), (68525, 0.25),
-            (104425, 0.28), (186475, 0.33), (float('inf'), 0.35)],
-elif status == 3:  # Head of Household
-        brackets = [(11950, 0.10), (45500, 0.15), (117450, 0.25),
-        else:
-        print("Invalid filing status!")
-        return 0
-
-    tax = 0.0
-    previous_limit = 0
-
-    for limit, rate in brackets:
-        if income > limit:
-            tax += (limit - previous_limit) * rate
-            previous_limit = limit
-        else:
-            tax += (income - previous_limit) * rate
-            break
-
-    return tax
+It uses the official *2009 tax brackets* and applies a *progressive tax calculation*.
 
 
-tax = compute_tax(status, income)
-print(f"\nYour federal income tax is: ${tax:.2f}")
-            (190200, 0.28), (372950, 0.33), (float('inf'), 0.35)]
+
+# Features
+
+- Supports *four filing statuses*:
+  - Single
+  - Married Filing Jointly / Qualified Widow(er)
+  - Married Filing Separately
+  - Head of Household
+- Uses *progressive tax brackets*
+- Handles invalid input gracefully
+- Clear and user-friendly console output
+
+
+
+#Technologies Used
+
+- Python 3.8(32-bits)
+- Console-based input/output
+
+
+
+
 
